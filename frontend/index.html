@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ExplainIt AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating background: LEFT SIDE -->
+    <!-- Floating background: LEFT SIDE -->
+    <div class="floating-bg left">
+        <span>AI</span>
+        <span>🤖</span>
+        <span>⚙️</span>
+        <span>DATA</span>
+        <span>🧠</span>
+        <span>∞</span>
+    </div>
+
+    <!-- Floating background: RIGHT SIDE -->
+    <div class="floating-bg right">
+        <span>LEARN</span>
+        <span>✨</span>
+        <span>📊</span>
+        <span>THINK</span>
+        <span>☁️</span>
+        <span>CLARITY</span>
+    </div>
+
+
+    <!-- Main Container -->
+    <div class="container fade-in">
+
+        <h1 class="float">🧠 ExplainIt AI</h1>
+        <p class="subtitle">Designed to turn complexity into meaningful clarity</p>
+        <p class="emoji">⌨️ ➜ 🤖 ➜ 📝</p>
+
+        <label for="inputText">Enter Text</label>
+        <textarea
+            id="inputText"
+            rows="6"
+            placeholder="Paste or type any complex concept here..."></textarea>
+
+        <!-- Age Selection -->
+        <div class="age-buttons">
+            <button class="age-btn active" data-age="child">👶 Child</button>
+            <button class="age-btn" data-age="adult">🧑 Adult</button>
+            <button class="age-btn" data-age="elder">👴 Elder</button>
+        </div>
+
+        <!-- Explain Button -->
+        <div style="margin-top: 20px; text-align: right;">
+            <button class="cool-btn" onclick="explainText()">🔍  Explain It</button>
+        </div>
+
+        <!-- Output -->
+        <h3>AI Explanation😎</h3>
+        <div id="output" class="output-box">
+            The simplified explanation will appear here...
+        </div>
+
+        <!-- Sample Questions -->
+        <div class="sample-box">
+            <h3 class="sample-title">🚧 Model Under Development</h3>
+
+            <p class="sample-text">
+                We are currently working on improving our AI model.
+                Until then, you can use the following questions to test our project:
+            </p>
+
+            <!-- CLICKABLE QUESTIONS -->
+            <ul class="sample-questions">
+            <li data-question="Explain photosynthesis">🌱 Explain photosynthesis</li>
+            <li data-question="What is gravity?">🌍 What is gravity?</li>
+            <li data-question="Explain the internet">🌐 Explain the internet</li>
+            <li data-question="What is artificial intelligence?">🤖 What is artificial intelligence?</li>
+            <li data-question="Explain climate change?">🌎 Explain climate change?</li>
+            </ul>
+
+
+            <p class="copy-hint">💡 Tip: Click any question to auto-fill the input</p>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        /* Age button logic */
+        const ageButtons = document.querySelectorAll('.age-btn');
+        let selectedAge = "child";
+
+        ageButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                ageButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedAge = btn.dataset.age;
+            });
+        });
+
+        /* 👉 CLICK QUESTION → PASTE INTO TEXTAREA */
+        const textarea = document.getElementById("inputText");
+        const questions = document.querySelectorAll(".sample-questions li");
+
+        questions.forEach(item => {
+            item.addEventListener("click", () => {
+                textarea.value = item.innerText.trim();
+                textarea.focus();
+
+                // Move cursor to end
+                textarea.selectionStart = textarea.selectionEnd = textarea.value.length;
+            });
+        });
+    </script>
+
+</body>
+</html>
