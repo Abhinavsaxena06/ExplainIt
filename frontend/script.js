@@ -53,7 +53,7 @@ async function explainText() {
     cinematicScrollToCenter(output);
 
     try {
-        const response = await fetch("https://explainit-1.onrender.com/explain", {
+        const response = await fetch("https://explainit-2.onrender.com//explain", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
