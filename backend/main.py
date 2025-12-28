@@ -61,6 +61,15 @@ def explain(data: UserInput):
         else:
             result = "Electricity is a form of energy that powers homes and machines. It helps devices work properly."
 
+    # CLIMATE CHANGE
+    elif "climate" in text:
+        if age == "child":
+            result =  "🌍🔥 Climate change means Earth is getting warmer, like wearing too many blankets! It affects animals, weather, and our planet."
+        elif age == "adult":
+            result = "Climate change refers to long-term changes in Earth's temperature and weather patterns. It is largely caused by human activities like pollution and deforestation."
+        else:
+            result = "Climate change affects weather, temperatures, and the environment. It can impact plants, animals, and humans."
+            
     # ARTIFICIAL INTELLIGENCE
     elif "artificial intelligence" in text or "ai" in text:
         if age == "child":
@@ -70,14 +79,7 @@ def explain(data: UserInput):
         else:
             result = "AI allows computers to learn from data and make smart decisions. It is used in apps, machines, and smart devices."
 
-    # CLIMATE CHANGE
-    elif "climate" in text:
-        if age == "child":
-            result =  "🌍🔥 Climate change means Earth is getting warmer, like wearing too many blankets! It affects animals, weather, and our planet."
-        elif age == "adult":
-            result = "Climate change refers to long-term changes in Earth's temperature and weather patterns. It is largely caused by human activities like pollution and deforestation."
-        else:
-            result = "Climate change affects weather, temperatures, and the environment. It can impact plants, animals, and humans."
+    
 
     else:
         result = "⚠️ Topic not recognized. Please try another concept."
