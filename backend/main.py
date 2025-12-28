@@ -1,6 +1,9 @@
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from flask_cors import CORS
+CORS(app)
 
 app = FastAPI(title="ExplainIt AI")
 
